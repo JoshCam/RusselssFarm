@@ -2,54 +2,69 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
-import reportWebVitals from "./reportWebVitals";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
-
 const initialState = {
   animalData: [
     {
-      dog: "./sounds/dog.mp3",
+      animal: "dog",
+      audio: "./sounds/dog.wav",
       img: "./img/dog.svg",
-      firstLetter: "./sounds/d.mp3",
-      secondLetter: "./sounds/o.mp3",
-      thirdLetter: "./sounds/g.mp3",
+      firstLetter: "./sounds/D.wav",
+      secondLetter: "./sounds/O.wav",
+      thirdLetter: "./sounds/G.wav",
     },
     {
-      cat: "./sounds/cat.mp3",
+      animal: "cat",
+      audio: "./sounds/cat.wav",
       img: "./img/cat.svg",
-      firstLetter: "./sounds/c.mp3",
-      secondLetter: "./sounds/a.mp3",
-      thirdLetter: "./sounds/t.mp3",
+      firstLetter: "./sounds/C.wav",
+      secondLetter: "./sounds/A.wav",
+      thirdLetter: "./sounds/T.wav",
     },
     {
-      cow: "./sounds/cow.mp3",
+      animal: "cow",
+      audio: "./sounds/cow.wav",
       img: "./img/cow.svg",
-      firstLetter: "./sounds/c.mp3",
-      secondLetter: "./sounds/o.mp3",
-      thirdLetter: "./sounds/w.mp3",
+      firstLetter: "./sounds/C.wav",
+      secondLetter: "./sounds/O.wav",
+      thirdLetter: "./sounds/W.wav",
     },
-    { owl: "./sounds/owl.mp3", img: "./img/owl.svg" },
-    // { pig: "./sounds/pig.mp3", img: "./img/pig.svg" },
-    // { hen: "./sounds/hen.mp3", img: "./img/hen.svg" },
+    {
+      animal: "owl",
+      audio: "./sounds/owl.wav",
+      img: "./img/owl.svg",
+      firstLetter: "./sounds/O.wav",
+      secondLetter: "./sounds/W.wav",
+      thirdLetter: "./sounds/L.wav",
+    },
+    {
+      animal: "pig",
+      audio: "./sounds/pig.wav",
+      img: "./img/pgi.svg",
+      firstLetter: "./sounds/P.wav",
+      secondLetter: "./sounds/I.wav",
+      thirdLetter: "./sounds/G.wav",
+    },
+    {
+      animal: "hen",
+      audio: "./sounds/hen.wav",
+      img: "./img/hen.svg",
+      firstLetter: "./sounds/H.wav",
+      secondLetter: "./sounds/E.wav",
+      thirdLetter: "./sounds/N.wav",
+    },
   ],
 };
-
 function reducer(state = initialState, action) {
   switch (action.type) {
-    case "INCREMENT":
-      return { ...state, count: state.count + 1 };
-    case "DECREMENT":
-      return { ...state, count: state.count - 1 };
-    case "RESET":
-      return { ...state, count: 0 };
+    case "SET_SCREEN_MODE":
+      return { ...state, screenMode: action.screenMode };
     default:
       return state;
   }
 }
-
 const store = createStore(reducer);
-
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>

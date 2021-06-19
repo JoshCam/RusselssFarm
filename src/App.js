@@ -1,10 +1,25 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import AnimalContainer from "./components/animalContainer";
+import AnimalCard from "./components/animalCard";
+// import AnimalCard from "./components/animalCard";
 
 class App extends Component {
   render() {
+    console.log(this.props.animalData);
     return (
       <>
+        {/* {this.props.screenMode === 0 ? (
+          <AnimalContainer />
+        ) : this.props.screenMode === 1 ? (
+          <AnimalCard />
+        ) : (
+          ""
+        )} */}
+
+        <AnimalContainer animalData={this.props.animalData} />
+
+        <br></br>
         <h1>My counter</h1>
         <p>The count is {this.props.count}</p>
         <button onClick={() => this.props.dispatch({ type: "INCREMENT" })}>
@@ -23,7 +38,8 @@ class App extends Component {
 
 function mapStateToProps(state) {
   return {
-    count: state.count,
+    animalData: state.animalData,
+    screenMode: state.screenMode,
   };
 }
 
