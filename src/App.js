@@ -10,6 +10,8 @@ import Cow from "./components/cow";
 import Hen from "./components/hen";
 import Pig from "./components/pig";
 import Owl from "./components/owl";
+import ForParents from "./components/forParents";
+import AlphabetContainer from "./components/alphabetContainer";
 
 class App extends Component {
   render() {
@@ -22,6 +24,8 @@ class App extends Component {
         {this.props.screenMode === "pig" && <Pig />}
         {this.props.screenMode === "owl" && <Owl />}
         {this.props.screenMode === "hen" && <Hen />}
+        {this.props.screenMode === "parents" && <ForParents />}
+        {this.props.screenMode === "alphabet" && <AlphabetContainer />}
         {this.props.screenMode === "animalcontainer" && <AnimalContainer />}
       </>
     );

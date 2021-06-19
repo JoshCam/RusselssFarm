@@ -73,6 +73,10 @@ function reducer(state = initialState, action) {
       return { ...state, screenMode: "hen" };
     case "PIG":
       return { ...state, screenMode: "pig" };
+    case "PARENTS":
+      return { ...state, screenMode: "parents" };
+    case "ALPHABET":
+      return { ...state, screenMode: "alphabet" };
     default:
       return state;
   }

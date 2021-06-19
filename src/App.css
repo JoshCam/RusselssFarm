@@ -1,11 +1,71 @@
+body {
+  background-color: lightgreen;
+}
+
+.logo {
+  text-align: center;
+}
+
 .wordContainer {
+  background-color: white;
+  border-radius: 15px;
   height: 300px;
   width: 300px;
   border: 1px solid black;
+  margin: 10px;
+}
+
+.wordContainer img {
+  display: block;
+  margin: auto;
+  margin-top: 50px;
 }
 
 .container {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 15px;
+  height: 80vh;
+  width: 80vw;
+  margin: auto;
+  margin-top: 10%;
+  position: relative;
+}
+
+.animalHome {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.back-Btn {
+  background-color: white;
+  border: 3px solid lightblue;
+  margin-top: 30px;
+}
+
+.fa-icon {
+  font-size: 30px;
+  padding: 5px;
+}
+
+.listen-img {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.container img {
+  margin: 20px;
+}
+
+.parents {
+  margin-right: auto;
+  margin: 20px;
+  padding: 20px;
+  font-size: large;
 }

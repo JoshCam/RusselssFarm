@@ -1,11 +1,18 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import picture from "../img/hen.svg";
+import { FaArrowLeft } from "react-icons/fa";
+import listen from "../img/listen.png";
 
 import H from "../audio/H.wav";
 import E from "../audio/E.wav";
 import N from "../audio/N.wav";
 import HEN from "../audio/HEN.wav";
+import HEN_NOISE from "../audio/ANIMAL NOISES/HEN_NOISE.wav";
+
+import letterH from "../img/alphabet/H.png";
+import letterE from "../img/alphabet/E.png";
+import letterN from "../img/alphabet/N.png";
 
 class Hen extends Component {
   playAudio = (letter) => {
@@ -22,6 +29,10 @@ class Hen extends Component {
         break;
       case "HEN":
         audio = new Audio(HEN);
+        break;
+      case "HEN_NOISE":
+        audio = new Audio(HEN_NOISE);
+        break;
     }
     audio.play();
   };
@@ -29,16 +40,26 @@ class Hen extends Component {
     return (
       <div className="container">
         <div>
-          <span onClick={() => this.playAudio("H")}>H</span>
-          <span onClick={() => this.playAudio("E")}>E</span>
-          <span onClick={() => this.playAudio("N")}>N</span>
+          <img src={letterH} onClick={() => this.playAudio("H")}></img>
+          <img src={letterE} onClick={() => this.playAudio("E")}></img>
+          <img src={letterN} onClick={() => this.playAudio("N")}></img>
         </div>
         <div>
-          <h1 onClick={() => this.playAudio("HEN")}>Listen</h1>
+          <img
+            src={listen}
+            className="listen-img"
+            onClick={() => this.playAudio("HEN")}
+          ></img>
         </div>
         <div>
-          <img src={picture}></img>
+          <img src={picture} onClick={() => this.playAudio("HEN_NOISE")}></img>
         </div>
+        <button
+          className="back-Btn"
+          onClick={() => this.props.dispatch({ type: "ANIMALCONTAINER" })}
+        >
+          <FaArrowLeft className="fa-icon" />
+        </button>
       </div>
     );
   }
