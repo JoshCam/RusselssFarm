@@ -1,13 +1,13 @@
-import React, { Component } from "react";
+// import React, { Component } from "react";
 
-class Image extends Component {
-  render() {
-    return (
-      <div>
-        <img src={this.props.animal.img} alt="Dog Img" title="dog Img"></img>
-      </div>
-    );
-  }
-}
+// class Image extends Component {
+//   render() {
+//     return (
+//       <div>
+//         <img src={this.props.animal.img}></img>
+//       </div>
+//     );
+//   }
+// }
 
-export default Image;
+// export default Image;

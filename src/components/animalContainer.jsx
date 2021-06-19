@@ -1,23 +1,96 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import AnimalCard from "./animalCard";
+
 import "../App.css";
+
+// Screen to show all clickable animals
 
 class AnimalContainer extends Component {
   render() {
-    // console.log(this.props.animalData);
     return (
       <div>
-        <AnimalCard animalData={this.props.animalData} />
+        <div
+          className="wordContainer"
+          onClick={() =>
+            this.props.dispatch({ type: "DOG" }, () =>
+              console.log("this was clicked")
+            )
+          }
+        >
+          Dog
+        </div>
+        <div
+          className="wordContainer"
+          onClick={() =>
+            this.props.dispatch({ type: "CAT" }, () =>
+              console.log("this was clicked")
+            )
+          }
+        >
+          Cat
+        </div>
+        <div
+          className="wordContainer"
+          onClick={() =>
+            this.props.dispatch({ type: "OWL" }, () =>
+              console.log("this was clicked")
+            )
+          }
+        >
+          Owl
+        </div>
+        <div
+          className="wordContainer"
+          onClick={() =>
+            this.props.dispatch({ type: "COW" }, () =>
+              console.log("this was clicked")
+            )
+          }
+        >
+          Cow
+        </div>
+        <div
+          className="wordContainer"
+          onClick={() =>
+            this.props.dispatch({ type: "PIG" }, () =>
+              console.log("this was clicked")
+            )
+          }
+        >
+          Pig
+        </div>
+        <div
+          className="wordContainer"
+          onClick={() =>
+            this.props.dispatch({ type: "HEN" }, () =>
+              console.log("this was clicked")
+            )
+          }
+        >
+          Hen
+        </div>
       </div>
     );
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    animalData: state.animalData,
-  };
-}
+// function mapStateToProps(state) {
+//   return {
+//     animalData: state.animalData,
+//   };
+// }
 
-export default connect(mapStateToProps)(AnimalContainer);
+export default connect()(AnimalContainer);
+
+// class AnimalContainer extends Component {
+//   render() {
+//     // console.log(this.props.animalData);
+//     return (
+//       <div>
+//         {this.props.animalData.map((animal) => {
+//           return <AnimalCard animal={animal} />;
+//         })}
+//       </div>
+//     );
+//   }
+// }

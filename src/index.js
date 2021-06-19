@@ -5,6 +5,7 @@ import App from "./App";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
 const initialState = {
+  screenMode: "animalcontainer",
   animalData: [
     {
       animal: "dog",
@@ -58,8 +59,20 @@ const initialState = {
 };
 function reducer(state = initialState, action) {
   switch (action.type) {
-    case "SET_SCREEN_MODE":
-      return { ...state, screenMode: action.screenMode };
+    case "ANIMALCONTAINER":
+      return { ...state, screenMode: "animalcontainer" };
+    case "DOG":
+      return { ...state, screenMode: "dog" };
+    case "CAT":
+      return { ...state, screenMode: "cat" };
+    case "COW":
+      return { ...state, screenMode: "cow" };
+    case "OWL":
+      return { ...state, screenMode: "owl" };
+    case "HEN":
+      return { ...state, screenMode: "hen" };
+    case "PIG":
+      return { ...state, screenMode: "pig" };
     default:
       return state;
   }
