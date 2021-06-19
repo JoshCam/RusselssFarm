@@ -7,12 +7,12 @@ class AnimalCard extends Component {
     console.log(">>>", this.props.animalData);
     return (
       <div>
-        {this.state.animalData.map((item) => {
+        {this.props.animalData.map((animal) => {
           return (
             <div>
               {/* <Letters /> */}
               {/* <Audio /> */}
-              <Image item={item} />
+              <Image animal={animal} />
             </div>
           );
         })}
